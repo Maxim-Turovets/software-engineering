@@ -48,3 +48,11 @@
 ; search by value
 (defun make-comparison-expr (field value)
   (list 'equal (list 'getf 'relay field) value))
+
+; sorting vectors String for DB
+ (defun sort(n)
+    (vs-sort aq (- n 1))
+    (loop for i from 0 to n do 
+    (print (select(where :title (elt aq i)) ))
+    )
+ )
